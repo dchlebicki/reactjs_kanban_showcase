@@ -1,0 +1,13 @@
+.kanban-col {
+    height: 550px;
+    border-width: 1px;
+    border-style:  solid;
+    border-color: #8f8f8f;
+    border-radius: 7px;
+    padding: 10px;
+    box-shadow: 4px 4px 20px #c5c5c5;
+}
+
+.top-buffer {
+    margin-top: 50px;
+}
