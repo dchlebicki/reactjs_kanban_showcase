@@ -1,77 +1,32 @@
 body {
-    font: 14px "Century Gothic", Futura, sans-serif;
-    margin: 20px;
-  }
-  
-  ol, ul {
-    padding-left: 30px;
-  }
-  
-  .board-row:after {
-    clear: both;
-    content: "";
-    display: table;
-  }
-  
-  .status {
-    margin-bottom: 10px;
-  }
-  
-  .square {
-    background: #fff;
-    border: 1px solid rgb(63, 63, 63);
-    float: left;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 34px;
-    height: 34px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 0;
-    text-align: center;
-    width: 34px;
-  }
-  
-  .square:focus {
-    outline: none;
-  }
-  
-  .kbd-navigation .square:focus {
-    background: #ddd;
-  }
-  
-  .game {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .game-info {
-    margin-left: 20px;
-  }
-  
-  .kanban-card {
-    border-width: 1px;
-    border-style:  solid;
-    border-color: #8f8f8f;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
-    /*box-shadow: 5px 5px 18px #b6b6b6;*/
-  }
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
+}
 
-  .kanban-col {
-    height: 550px;
-    border-width: 1px;
-    border-style:  solid;
-    border-color: #8f8f8f;
-    border-radius: 7px;
-    padding: 10px;
-    box-shadow: 4px 4px 20px #c5c5c5;
-  }
+.kanban-card {
+  border-width: 1px;
+  border-style:  solid;
+  border-color: #8f8f8f;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  /*box-shadow: 5px 5px 18px #b6b6b6;*/
+}
+
+.kanban-col {
+  height: 550px;
+  border-width: 1px;
+  border-style:  solid;
+  border-color: #8f8f8f;
+  border-radius: 7px;
+  padding: 10px;
+  box-shadow: 4px 4px 20px #c5c5c5;
+}
 
 
-  .kanban-card-btn-remove {
-  width: 10px;
-  height: 10px;
+.kanban-card-btn-remove {
+  width: 20px;
+  height: 20px;
+  padding: 0;
   float: right;
-  }
+}

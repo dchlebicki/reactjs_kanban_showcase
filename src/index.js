@@ -12,42 +12,31 @@ class KanbanCard extends React.Component {
     this.state = {
       active: true
     }
+
+    this.disable = this.disable.bind(this)
   }
 
   render() {
     if(this.state.active) {
       return (
         <div class="kanban-card" id={this.id}>
-          <button type="button" class="btn btn-xl btn-danger kanban-card-btn-remove" onClick={this.disable()}>
-            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+          <button type="button" class="btn btn-danger kanban-card-btn-remove" onClick={this.disable}>
+            <span class="glyphicon glyphicon-remove"></span>&nbsp;
           </button>
           <h5>{this.title}</h5>
           {this.description}  
         </div>
       )
     } else {
-      return ""
+      return null
     }
   }
 
   disable() {
-    this.state.active = false;
-    this.render()
+    this.setState({active: false})
   }
-} 
-/*
-function KanbanCard(props) {
-  return (
-    <div class="kanban-card" id={props.title}>
-      <button type="button" class="btn btn-xl btn-danger kanban-card-btn-remove" onClick={props.onClick}>
-        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-      </button>
-      <h5>{props.title}</h5>
-      {props.description}  
-    </div>
-  )
 }
-*/
+
 class KanbanColumn extends React.Component {
   constructor(props) {
     super(props)
@@ -76,29 +65,27 @@ class KanbanBoard extends React.Component {
 
   render() {
     return (
-      //for each child -> KanbanColumn
       this.children
     )
   }
 }
 
 ReactDOM.render(
-  //<KanbanCard id="1" onClick="console.log('works')" title="INSY Referat vorbereiten" description="referat über react js, mein teil: praktisch zeigen"/>,
   <KanbanBoard>
     <KanbanColumn type="todo" title="To do">
-      <KanbanCard title="Hausaufgaben machen" description="Mathematik, SEW" />
-      <KanbanCard title="Blumen gießen" description="" />
-      <KanbanCard title="Katze füttern" description="Mathematik, SEW" />
+      <KanbanCard title="Hausaufgaben machen" description="vieles" />
+      <KanbanCard title="Blumen gießen" description="Die im Wohnzimmer, Küche, Schlafzimmer und Garten" />
+      <KanbanCard title="Einkaufen" description="Katzenfutter, Klopapier, Schokolade" />
     </KanbanColumn>
     <KanbanColumn type="inprogress" title="In progress">
-      <KanbanCard title="In die Schule gehen" description="Mathematik, SEW" />
-      <KanbanCard title="Blumen gießen" description="" />
-      <KanbanCard title="Katze füttern" description="Mathematik, SEW" />
+      <KanbanCard title="Weiterarbeiten am Diplomprojekt" description="Modelle + Texturen erstellen" />
+      <KanbanCard title="INSY React Referat" description="10.1.2018" />
+      <KanbanCard title="In die Schule gehen" description="Ich kriege nicht genug Schlaf" />
     </KanbanColumn>
     <KanbanColumn type="done" title="Done">
-      <KanbanCard title="Hausaufgaben machen" description="Mathematik, SEW" />
-      <KanbanCard title="Blumen gießen" description="" />
-      <KanbanCard title="Katze füttern" description="Mathematik, SEW" />
+      <KanbanCard title="React lernen" description="React JS-Framework anschauen" />
+      <KanbanCard title="Weihnachtsgeschenke kaufen" description="bis spätestens 23.12.17" />
+      <KanbanCard title="'Schöne neue Welt' lesen" description="Bis 8.1.2018" />
     </KanbanColumn>
   </KanbanBoard>,
   document.getElementById('kanban-root')
